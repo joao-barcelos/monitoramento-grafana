@@ -12,7 +12,9 @@
 <script src="theme/default.js"> </script><link rel="stylesheet" href="theme/content.css">
 </head>
 <body class="exe-export exe-web-site" lang="pt_br">
-<script>document.body.className+=" js"</script><div class="exe-content exe-export pre-js siteNav-hidden"> <nav id="siteNav"> <ul> <li class="active"> <a href="index.html" class="active main-node daddy">OLT</a><ul> <li> <a href="html/grafana.html" class="no-ch">Grafana</a>
+<script>document.body.className+=" js"</script><div class="exe-content exe-export pre-js siteNav-hidden"> <nav id="siteNav"> <ul> <li class="active"> <a href="index.html" class="active main-node no-ch">Manual</a>
+</li>
+<li> <a href="html/olt.html" class="daddy">OLT</a><ul class="other-section"> <li> <a href="html/grafana.html" class="no-ch">Grafana</a>
 </li>
 </ul>
 </li>
@@ -20,39 +22,35 @@
 </li>
 </ul>
 </li>
-</ul></nav><main id="20251116224013003SL0" class="page"> <header id="header-20251116224013003SL0" class="page-header"> <h1 class="page-title">OLT</h1></header><div id="page-content-20251116224013003SL0" class="page-content"> <article id="20251117210407163PMA" class="box"> <header class="box-head no-icon"> <h1 class="box-title">Novo monitoramento - Grafana</h1>
-<button class="box-toggle box-toggle-on" title="Toggle content"> <span>Toggle content</span></button></header><div class="box-content"> <div id="20251117210407162JJF" class="idevice_node text" data-idevice-path="idevices/text/" data-idevice-type="text" data-idevice-component-type="json"><div class="exe-text-template"><div class="textIdeviceContent">
+</ul></nav><main id="202511180041367905G0" class="page"> <header id="header-202511180041367905G0" class="page-header"> <h1 class="page-title">Manual</h1></header><div id="page-content-202511180041367905G0" class="page-content"> <article id="202511180043530751NE" class="box"> <header class="box-head no-icon"> <h1 class="box-title">Manual de Monitoramento</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content"> <span>Toggle content</span></button></header><div class="box-content"> <div id="20251118004353073UWH" class="idevice_node text" data-idevice-path="idevices/text/" data-idevice-type="text" data-idevice-component-type="json"><div class="exe-text-template"><div class="textIdeviceContent">
             <div class="exe-text-activity">
-                <div><p><em><strong>💻 Introdução: Monitoramento de OLT com Grafana</strong></em><br>&nbsp;&nbsp;</p>
-<p>O Que é OLT?<br>&nbsp;</p>
-<p>A OLT (Optical Line Terminal - Terminal de Linha Óptica) é o equipamento central e o coração de qualquer rede GPON (Gigabit Passive Optical Network). Ela está localizada no provedor de serviços e é responsável por iniciar e gerenciar a comunicação com todas as ONUs (Optical Network Units) instaladas nas residências ou empresas dos clientes.</p>
-<p>A OLT atua como o ponto de agregação e controle, convertendo o sinal de dados da rede principal (backbone) para o formato óptico e distribuindo-o para os splitters e, consequentemente, para as ONUs através de uma única fibra óptica para cada porta PON. Em essência, ela gerencia todo o tráfego de subida (upstream) e descida (downstream) na rede de fibra óptica.</p>
-<p style="text-align: center;">&nbsp;<br>&nbsp;<em><strong>Visão Geral do Monitoramento no Grafana</strong></em><br>&nbsp;</p>
-<p>O novo painel de Monitoramento de OLT no Grafana foi desenvolvido para fornecer uma visão completa e em tempo real da saúde do seu equipamento e do desempenho da sua rede PON. Ele consolida as métricas mais críticas, permitindo que as equipes de suporte e de rede diagnostiquem problemas rapidamente, otimizem a performance e garantam a alta disponibilidade do serviço.</p>
-<p>A visualização está organizada em duas áreas principais:</p>
-<p>&nbsp;</p>
-<p>1. ⚙️ <em><strong>Informações de Hardware (Cards de Gerência e Serviço)</strong></em><br>&nbsp;</p>
-<p>Esta seção foca na saúde interna e na capacidade operacional da OLT. Acompanhar estas métricas é vital para prevenir falhas de hardware e sobrecarga:</p>
+                <div><p>📜 <strong>Visão Geral&nbsp;</strong></p>
+<p>&nbsp;<br>Bem-vindo ao Manual de Monitoramento de Infraestrutura de Rede.</p>
+<p>Este documento é seu guia completo para navegar e interpretar as informações vitais da nossa rede, conforme exibidas em tempo real nos dashboards do Grafana. Nosso novo sistema de monitoramento MASTER foi desenvolvido para oferecer uma visão 360 graus da saúde da infraestrutura, permitindo uma gestão mais proativa, diagnósticos mais rápidos e a manutenção da alta qualidade dos serviços prestados.</p>
+<p>O manual está estruturado em módulos que cobrem todos os elementos críticos da nossa rede. A seguir, um resumo do que será abordado em cada seção:</p>
 <ul>
-<li>Status Geral do Card: Indica se o Card de Gerência e o Card de Serviço estão operando corretamente (OK).</li>
-<li>Utilização da CPU: Mostra o percentual de uso do processador, indicando a carga de trabalho atual do equipamento.</li>
-<li>Utilização da Memória (MEM): Exibe o consumo de memória, alertando para possíveis memory leaks ou sobrecarga que pode levar à instabilidade.</li>
-</ul>
-<p><br></p>
-<p>No nosso dashboard, você verá gráficos de linha e barras que mostram as tendências de CPU e MEM ao longo do tempo.<br>Informações Adicionais: Status de Hardware e Software do Card.<br>&nbsp;</p>
-<p>2. 🚦 <em><strong>Informações e Saúde das Portas PON</strong></em><br>&nbsp;</p>
-<p>Esta é a seção mais crítica para o diagnóstico de problemas na rede externa, focando no desempenho de cada porta que se conecta aos clientes. Você poderá verificar:</p>
-<p>Temperatura (TEMP) e Tensão (VOLT) da Porta: Métricas de saúde física da porta, importantes para detectar superaquecimento ou problemas elétricos.<br>Transmissão (TX) Óptica: O nível de potência de sinal que a porta PON está emitindo. Níveis baixos podem indicar falha do laser da porta.</p>
-<ul>
-<li>ONUs ON: O número de clientes que estão conectados e operacionais na porta.</li>
-<li>ONUs OFF: O número de ONUs que estão registradas, mas atualmente desligadas ou desconectadas.</li>
-<li>ONUs LOSS: O número crítico de ONUs que estão perdendo sinal (Loss of Signal ou Loss of Power), indicando problemas de fibra óptica (rompimentos, fusões ruins, sujeira, etc.).</li>
-<li>ONUs GAPs: ONUs que estão em estado de dying gasp, geralmente indicando falha de energia na casa do cliente.</li>
-<li>Tráfego nas PONs: Gráficos que monitoram a vazão de dados (b/s) em tempo real, além da contagem de Pacotes com Erros e Pacotes Descartados, essenciais para identificar congestionamentos ou problemas de qualidade de sinal (bit errors).</li>
+<li>OLT<br></li>
+<li>Saúde do hardware (CPU/MEM), Tráfego de Banda, Pacotes com Erros/Descartes, Status e Sinal (TX/RX) das ONUs por porta PON (Loss, ON/OFF).</li>
+<li>SWITCHES<br></li>
+<li>Saúde do hardware (CPU/MEM), Tráfego de Entrada/Saída por interface, Integridade e Sinal (TX/RX) dos módulos SFP/Ópticos, Pacotes com</li>
+<li>Erros/Descartes.</li>
+<li>BNG<br></li>
+<li>Desempenho do hardware, Quantidade de Clientes Conectados, Status das Sessões e Monitoramento de Tráfego de Agregação.</li>
+<li>PPPoE<br></li>
+<li>Gráficos de Sessões PPPoE Ativas (Geral e por VLAN), Indicadores de Desempenho e Qualidade do Serviço de Autenticação.</li>
+<li>BGP<br></li>
+<li>Status dos Peers BGP, Rotas Anunciadas e Recebidas, e Latência dos Links de Interconexão (para assegurar a conectividade global).</li>
+<li>RETIFICADORAS<br></li>
+<li>Monitoramento da Fonte de Energia, Tensão e Corrente (Volt/Ampere), Status da Bateria e Temperaturas (para garantir a disponibilidade energética da</li>
+<li>infraestrutura)</li>
+<li>B2B<br></li>
+<li>Monitoramento específico de tráfego, latência e disponibilidade dos links de Clientes Corporativos (Business to Business);<br></li>
+<li>Acompanhamento centralizado de alarmes, Drilldown detalhado dos eventos críticos e Histórico de Incidentes da Rede.<br><br><br></li>
 </ul><p class="clearfix"></p></div>
             </div></div></div></div>
 </div></article>
-</div></main><div class="nav-buttons"> <span class="nav-button nav-button-left" aria-hidden="true"> <span>Previous</span></span><a href="html/grafana.html" title="Next" class="nav-button nav-button-right"> <span>Next</span></a>
+</div></main><div class="nav-buttons"> <span class="nav-button nav-button-left" aria-hidden="true"> <span>Previous</span></span><a href="html/olt.html" title="Next" class="nav-button nav-button-right"> <span>Next</span></a>
 </div>
 <footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class="cc cc-by-sa"> <p> <span class="license-label">Licencia: </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">creative commons: attribution - share alike 4.0</a></p>
 </div>
