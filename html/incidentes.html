@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt_br" id="exe-node-202511281016192597EN">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v3.0.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-sa/4.0/">
+<title>Incidentes | Untitled document</title>
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"> </script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css">
+<script src="../theme/default.js"> </script><link rel="stylesheet" href="../theme/content.css">
+</head>
+<body class="exe-export exe-web-site" lang="pt_br">
+<script>document.body.className+=" js"</script><div class="exe-content exe-export pre-js siteNav-hidden"> <nav id="siteNav"> <ul> <li> <a href="../index.html" class="main-node no-ch">Manual</a>
+</li>
+<li> <a href="../html/olt.html" class="daddy">OLT</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana.html" class="no-ch">Monitoramento - Grafana</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/switch.html" class="daddy">Switch</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana1.html" class="no-ch">Monitoramento - Grafana</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/b2b.html" class="daddy">B2B</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana2.html" class="no-ch">Monitoramento - Grafana</a>
+</li>
+</ul>
+</li>
+<li class="active"> <a href="../html/incidentes.html" class="active daddy">Incidentes</a><ul> <li> <a href="../html/monitoramento-grafana3.html" class="no-ch">Monitoramento Grafana</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/bgp.html" class="no-ch">BGP</a>
+</li>
+</ul></nav><main id="202511281016192597EN" class="page"> <header id="header-202511281016192597EN" class="page-header"> <h1 class="page-title">Incidentes</h1></header><div id="page-content-202511281016192597EN" class="page-content"> <article id="202511281021430211LT" class="box"> <header class="box-head"> <div class="box-icon exe-icon"> <img src="../theme/icons/observe.png" alt="">
+</div>
+<h1 class="box-title">Novo monitoramento Grafana</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content"> <span>Toggle content</span></button></header><div class="box-content"> <div id="202511281021430204QT" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json"><div class="exe-text-template"><div class="textIdeviceContent">
+            <div class="exe-text-activity">
+                <div><p><em><strong>⚠️ Introdução: Drilldown e Monitoramento de Incidentes&nbsp;</strong></em></p>
+<p><em><strong></strong></em><br></p>
+<p>O uso da funcionalidade Drilldown (navegação em profundidade) permite que o operador passe de uma visão macro (total de incidentes por região) para uma visão micro (detalhes do alarme em um equipamento específico), garantindo que a resposta seja rápida e precisamente direcionada.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><strong>Visão Geral do Monitoramento no Grafana</strong><br>&nbsp;</p>
+<p>O painel de Incidentes está organizado para fornecer uma gestão de risco e prioridade com base em três níveis de visualização:</p>
+<p>&nbsp;</p>
+<p><em><strong>1. 🗺️ Visão Macro: Quantidade de Incidentes por Região</strong></em><br>&nbsp;</p>
+<p>Este é o ponto de partida do Drilldown, que oferece uma perspectiva geográfica da situação da rede.</p>
+<p>Regionalização de Incidentes: Um mapa visual (tabela de calor ou matriz) que exibe o número total de incidentes ativos em cada região operacional (ex: BHE, DVL, MCL, etc.).</p>
+<p>Navegação Rápida: O Drilldown permite clicar na região para ver a distribuição dos incidentes por tipo de equipamento.<br>&nbsp;</p>
+<p><em><strong>2. 🚨 Classificação de Criticidade (Status dos Incidentes)</strong></em><br>&nbsp;</p>
+<p>Após selecionar a região, o sistema classifica os incidentes pelo seu impacto potencial, utilizando uma escala de criticidade:</p>
+<p>Desastre (Vermelho Forte): Falha grave, potencialmente causando interrupção de serviço em massa. Exige ação imediata.</p>
+<p>Média / Atenção / Informação: Incidentes de menor impacto, mas que requerem investigação para prevenir escalonamento.<br>&nbsp;</p>
+<p><em><strong>3. 🔍 Detalhe e Ação (Monitoramento de Incidentes)</strong></em><br>&nbsp;</p>
+<p>O nível mais profundo do monitoramento, onde o operador obtém todas as informações para iniciar a resolução:</p>
+<p>Host e Peer Down: Identifica o equipamento exato (Host) e o motivo da falha, permitindo que a equipe saiba exatamente quem contatar ou qual link verificar.<br>Timestamp: Data e hora exatas da ocorrência do incidente, essencial para correlação e abertura de chamados.<br>A utilização disciplinada desta seção garante que os recursos sejam alocados de forma inteligente, priorizando incidentes que afetam o maior número de clientes ou a estabilidade do backbone.</p><p class="clearfix"></p></div>
+            </div></div></div></div>
+</div></article>
+</div></main><div class="nav-buttons"> <a href="../html/monitoramento-grafana2.html" title="Previous" class="nav-button nav-button-left"> <span>Previous</span></a><a href="../html/monitoramento-grafana3.html" title="Next" class="nav-button nav-button-right"> <span>Next</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class="cc cc-by-sa"> <p> <span class="license-label">Licencia: </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">creative commons: attribution - share alike 4.0</a></p>
+</div>
+</div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Made with eXeLearning <span>(new window)</span></span></a></p>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt_br" id="exe-node-20251128095511043EC8">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v3.0.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-sa/4.0/">
+<title>B2B | Untitled document</title>
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"> </script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css">
+<script src="../theme/default.js"> </script><link rel="stylesheet" href="../theme/content.css">
+</head>
+<body class="exe-export exe-web-site" lang="pt_br">
+<script>document.body.className+=" js"</script><div class="exe-content exe-export pre-js siteNav-hidden"> <nav id="siteNav"> <ul> <li> <a href="../index.html" class="main-node no-ch">Manual</a>
+</li>
+<li> <a href="../html/olt.html" class="daddy">OLT</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana.html" class="no-ch">Monitoramento - Grafana</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/switch.html" class="daddy">Switch</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana1.html" class="no-ch">Monitoramento - Grafana</a>
+</li>
+</ul>
+</li>
+<li class="active"> <a href="../html/b2b.html" class="active daddy">B2B</a><ul> <li> <a href="../html/monitoramento-grafana2.html" class="no-ch">Monitoramento - Grafana</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/incidentes.html" class="daddy">Incidentes</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana3.html" class="no-ch">Monitoramento Grafana</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/bgp.html" class="no-ch">BGP</a>
+</li>
+</ul></nav><main id="20251128095511043EC8" class="page"> <header id="header-20251128095511043EC8" class="page-header"> <h1 class="page-title">B2B</h1></header><div id="page-content-20251128095511043EC8" class="page-content"> <article id="20251128100716540FUD" class="box"> <header class="box-head"> <div class="box-icon exe-icon"> <img src="../theme/icons/observe.png" alt="">
+</div>
+<h1 class="box-title">Novo monitoramento Grafana</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content"> <span>Toggle content</span></button></header><div class="box-content"> <div id="20251128100716538L43" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json"><div class="exe-text-template"><div class="textIdeviceContent">
+            <div class="exe-text-activity">
+                <div><p><em><strong>💼 Introdução: Monitoramento de Switches B2B (Business-to-Business)</strong></em><br>&nbsp;&nbsp;</p>
+<p>A Importância do B2B na Rede<br>&nbsp;</p>
+<p>A seção de Monitoramento B2B (Business-to-Business) é uma área crítica do nosso sistema, pois foca na infraestrutura dedicada que atende aos nossos clientes corporativos. A qualidade e a estabilidade desses serviços são primordiais, exigindo monitoramento rigoroso e respostas a incidentes com máxima prioridade. O dashboard específico para o segmento B2B permite uma visão detalhada do desempenho dos switches que sustentam esses links de alto valor agregado.</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><strong>Visão Geral do Monitoramento no Grafana</strong><br>&nbsp;</p>
+<p>O painel B2B oferece uma análise detalhada, com foco em quatro áreas essenciais que ditam a experiência do cliente corporativo:</p>
+<p>&nbsp;</p>
+<p><strong>1. 🚨<em> Status Geral e Integridade do Hardware</em></strong><br>&nbsp;</p>
+<p>Esta seção garante que o switch dedicado (ou o equipamento que serve o cliente B2B) esteja funcionando perfeitamente em nível de sistema.</p>
+<p>Status de Comunicação (SNMP/PING): Confirma que o equipamento está acessível e respondendo à rede.<br>Uptime: Indica o tempo que o equipamento está ligado ininterruptamente (147 dias e 8 horas no exemplo), confirmando a estabilidade operacional.<br>Perda de Pacotes e Tempo de Resposta (Latência): Métricas diretas da qualidade da conexão. Perda de Pacotes 0% e Tempo de Resposta baixo (14.9 ms) são essenciais para garantir o desempenho contratado pelo cliente.<br>Status PSU (Fonte de Energia): Alerta Crítico! O monitoramento de hardware inclui o status das fontes. No exemplo, a PSU 02 está em FALHA, o que significa que o switch está operando em redundância reduzida (apenas com a PSU 01) e corre risco de desligamento se a fonte principal falhar.<br>Status dos Ventiladores (FANs): Monitora a refrigeração (Ex: 4200 rpm), vital para a longevidade do hardware.<br>&nbsp;</p>
+<p><em><strong>2. 🧠 Desempenho Interno (CPU e Memória)</strong></em><br>&nbsp;</p>
+<p>Aqui, verificamos a capacidade do switch em lidar com o processamento do tráfego B2B.</p>
+<p>Utilização da CPU: O uso está baixo e estável (24.5% / 25.1%), indicando que o switch tem folga para processar o tráfego.<br>Utilização da Memória (MEM): Alerta Importante! O uso de memória está extremamente alto e sustentado em 90.0%. Embora a CPU esteja baixa, um alto consumo de memória pode levar a descarte de pacotes por falta de buffer ou instabilidade, exigindo investigação.<br>&nbsp;</p>
+<p><em><strong>3. 📈 Tráfego, Erros e Descartes de Pacotes</strong></em><br>&nbsp;</p>
+<p>Essas métricas definem a qualidade do serviço B2B:</p>
+<p>Tráfego de Entrada/Saída: Visualiza o uso da banda por link. Isso é crucial para verificar se o cliente está usando a capacidade contratada e se há risco de saturação nos uplinks dedicados.<br>Pacotes com Erro e Descartados: O ideal é que permaneçam em zero. A presença dessas métricas indica problemas de hardware (cabeamento, SFP) ou sobrecarga de processamento, impactando diretamente a experiência do cliente.<br>&nbsp;</p>
+<p><em><strong>4. 🎛️ Interfaces e SFP Dedicados (Uplink/Cliente)</strong></em><br>&nbsp;</p>
+<p>Foca nos links ópticos de maior prioridade:</p>
+<p>Sinal Óptico (TX/RX):</p>
+<p>TX Power (Transmissão): A potência de saída do SFP do switch.<br>RX Power (Recepção): A potência que está chegando do outro lado do link (Backbone ou Cliente).</p><p class="clearfix"></p></div>
+            </div></div></div></div>
+</div></article>
+</div></main><div class="nav-buttons"> <a href="../html/monitoramento-grafana1.html" title="Previous" class="nav-button nav-button-left"> <span>Previous</span></a><a href="../html/monitoramento-grafana2.html" title="Next" class="nav-button nav-button-right"> <span>Next</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class="cc cc-by-sa"> <p> <span class="license-label">Licencia: </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">creative commons: attribution - share alike 4.0</a></p>
+</div>
+</div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Made with eXeLearning <span>(new window)</span></span></a></p>
+</body>
+</html>

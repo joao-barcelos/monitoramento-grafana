@@ -14,15 +14,27 @@
 <body class="exe-export exe-web-site" lang="pt_br">
 <script>document.body.className+=" js"</script><div class="exe-content exe-export pre-js siteNav-hidden"> <nav id="siteNav"> <ul> <li> <a href="../index.html" class="main-node no-ch">Manual</a>
 </li>
-<li> <a href="../html/olt.html" class="daddy">OLT</a><ul class="other-section"> <li> <a href="../html/grafana.html" class="no-ch">Grafana</a>
+<li> <a href="../html/olt.html" class="daddy">OLT</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana.html" class="no-ch">Monitoramento - Grafana</a>
 </li>
 </ul>
 </li>
-<li class="active"> <a href="../html/switch.html" class="active daddy">Switch</a><ul> <li> <a href="../html/grafana1.html" class="no-ch">Grafana</a>
+<li class="active"> <a href="../html/switch.html" class="active daddy">Switch</a><ul> <li> <a href="../html/monitoramento-grafana1.html" class="no-ch">Monitoramento - Grafana</a>
 </li>
 </ul>
 </li>
-</ul></nav><main id="20251116224022720DPL" class="page"> <header id="header-20251116224022720DPL" class="page-header"> <h1 class="page-title">Switch</h1></header><div id="page-content-20251116224022720DPL" class="page-content"> <article id="20251116224855522HMV" class="box"> <header class="box-head no-icon"> <h1 class="box-title">Novo monitoramento - Grafana</h1>
+<li> <a href="../html/b2b.html" class="daddy">B2B</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana2.html" class="no-ch">Monitoramento - Grafana</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/incidentes.html" class="daddy">Incidentes</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana3.html" class="no-ch">Monitoramento Grafana</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/bgp.html" class="no-ch">BGP</a>
+</li>
+</ul></nav><main id="20251116224022720DPL" class="page"> <header id="header-20251116224022720DPL" class="page-header"> <h1 class="page-title">Switch</h1></header><div id="page-content-20251116224022720DPL" class="page-content"> <article id="20251116224855522HMV" class="box"> <header class="box-head"> <div class="box-icon exe-icon"> <img src="../theme/icons/observe.png" alt="">
+</div>
+<h1 class="box-title">Novo monitoramento - Grafana</h1>
 <button class="box-toggle box-toggle-on" title="Toggle content"> <span>Toggle content</span></button></header><div class="box-content"> <div id="20251116224855521HC1" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json"><div class="exe-text-template"><div class="textIdeviceContent">
             <div class="exe-text-activity">
                 <div><p>🌐 <em><strong>Introdução: Monitoramento de Switches com Grafana</strong></em><br>&nbsp;</p>
@@ -34,11 +46,11 @@
 <p>O painel de Monitoramento de Switches no Grafana fornece uma análise aprofundada da saúde do equipamento e, principalmente, do desempenho das interfaces de rede, que são os links de comunicação de alta velocidade da sua infraestrutura.</p>
 <p>A visualização está organizada para monitorar três pilares essenciais: a saúde interna do Switch, a qualidade dos módulos SFP e o fluxo de tráfego nas portas de uplink:</p>
 <p>&nbsp;</p>
-<p>1. 🌡️ Saúde Geral do Switch (CPU e Memória)<br>&nbsp;</p>
+<p><em><strong>1. 🌡️ Saúde Geral do Switch (CPU e Memória)</strong></em><br>&nbsp;</p>
 <p>O foco aqui é garantir que o Switch esteja operando dentro dos limites de capacidade para processar o tráfego e gerenciar as interfaces:</p>
 <p>Utilização da CPU: Percentual de uso do processador, refletindo a carga de trabalho. Picos sustentados podem indicar lentidão na rede ou configuração excessiva (em modelos Camada 3).</p>
 <p>Alto consumo pode causar lentidão ou descarte de pacotes.<br><br>Status Operacional das Interfaces: Apresenta de forma visual (verde para UP/operacional) o status de cada porta do Switch, permitindo identificar rapidamente links caídos.<br>&nbsp;</p>
-<p>2. ⚡ Desempenho dos Módulos SFP/SFP+ (Ópticos)<br>&nbsp;</p>
+<p><em><strong>2. ⚡ Desempenho dos Módulos SFP/SFP+ (Ópticos)</strong></em><br>&nbsp;</p>
 <p>As interfaces ópticas (SFPs) são cruciais para a comunicação de alta velocidade entre Switches e Roteadores. O monitoramento destas métricas garante a estabilidade do link físico:</p>
 <p>Status de Transmissão/Recepção (TX/RX):</p>
 <ul>
@@ -47,7 +59,7 @@
 <li>Temperatura (TEMP) e Tensão (VOLT): Monitora a saúde física do módulo SFP. Temperaturas elevadas podem indicar falha iminente ou ventilação inadequada.</li>
 </ul>
 <p>&nbsp;</p>
-<p>3. 📉 Tráfego e Qualidade dos Links (Uplinks)<br>&nbsp;</p>
+<p><em><strong>3. 📉 Tráfego e Qualidade dos Links (Uplinks)</strong></em><br>&nbsp;</p>
 <p>Esta seção foca na capacidade e na qualidade do fluxo de dados nas portas de maior importância (geralmente as portas de uplink que conectam ao core ou à internet):</p>
 <ul>
 <li>Tráfego de Entrada e Saída (Gb/s): Mostra a vazão de dados em tempo real. Essencial para identificar congestionamentos (bottlenecks) ou links subutilizados.</li>
@@ -58,7 +70,7 @@
 <p><br></p><p class="clearfix"></p></div>
             </div></div></div></div>
 </div></article>
-</div></main><div class="nav-buttons"> <a href="../html/grafana.html" title="Previous" class="nav-button nav-button-left"> <span>Previous</span></a><a href="../html/grafana1.html" title="Next" class="nav-button nav-button-right"> <span>Next</span></a>
+</div></main><div class="nav-buttons"> <a href="../html/monitoramento-grafana.html" title="Previous" class="nav-button nav-button-left"> <span>Previous</span></a><a href="../html/monitoramento-grafana1.html" title="Next" class="nav-button nav-button-right"> <span>Next</span></a>
 </div>
 <footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class="cc cc-by-sa"> <p> <span class="license-label">Licencia: </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">creative commons: attribution - share alike 4.0</a></p>
 </div>
