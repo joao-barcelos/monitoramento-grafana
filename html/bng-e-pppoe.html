@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt_br" id="exe-node-20251128105100809AZH">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v3.0.1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-sa/4.0/">
+<title>BNG e PPPoe | Manual - Grafana</title>
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"> </script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css">
+<script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css">
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+</head>
+<body class="exe-export exe-web-site" lang="pt_br">
+<script>document.body.className+=" js"</script><div class="exe-content exe-export pre-js siteNav-hidden"> <nav id="siteNav"> <ul> <li> <a href="../index.html" class="main-node no-ch">Manual</a>
+</li>
+<li> <a href="../html/olt.html" class="daddy">OLT</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana.html" class="no-ch">Monitoramento - Grafana</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/switch.html" class="daddy">Switch</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana1.html" class="no-ch">Monitoramento - Grafana</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/b2b.html" class="daddy">B2B</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana2.html" class="no-ch">Monitoramento - Grafana</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/incidentes.html" class="daddy">Incidentes</a><ul class="other-section"> <li> <a href="../html/monitoramento-grafana3.html" class="no-ch">Monitoramento Grafana</a>
+</li>
+</ul>
+</li>
+<li class="active"> <a href="../html/bng-e-pppoe.html" class="active daddy">BNG e PPPoe</a><ul> <li> <a href="../html/bng.html" class="no-ch">BNG</a>
+</li>
+<li> <a href="../html/bgp.html" class="no-ch">BGP</a>
+</li>
+</ul>
+</li>
+</ul></nav><main id="20251128105100809AZH" class="page"> <header id="header-20251128105100809AZH" class="main-header"> <div class="package-header"><h1 class="package-title">Manual - Grafana</h1></div>
+<div class="page-header"><h2 class="page-title">BNG e PPPoe</h2></div></header><div id="page-content-20251128105100809AZH" class="page-content"> <article id="20251128105113275LZN" class="box"> <header class="box-head"> <div class="box-icon exe-icon"> <img src="../theme/icons/observe.png" alt="">
+</div>
+<h1 class="box-title">Novo monitoramento Grafana</h1>
+<button class="box-toggle box-toggle-on" title="Alternar conteúdo"> <span>Alternar conteúdo</span></button></header><div class="box-content"> <div id="20251128105113274M56" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json"><div class="exe-text-template"><div class="textIdeviceContent">
+            <div class="exe-text-activity">
+                <div><p><em><strong>🎛️ Introdução: Monitoramento de BNG e BGP</strong></em><br>&nbsp;&nbsp;</p>
+<p>O Que São BNG e BGP?<br>&nbsp;</p>
+<p>BNG (Broadband Network Gateway): É o equipamento que atua como gateway de rede para os clientes de banda larga. Suas funções primárias são:</p>
+<p>Autenticação de Usuários: Gerencia as sessões PPPoE (Point-to-Point Protocol over Ethernet), autorizando o acesso à rede.<br>Gerenciamento de Sessões: Controla a contagem de clientes ativos e a alocação de endereços IP a partir dos Pools de IPs.<br>Agregação de Tráfego: Atua como o ponto de entrada principal de todo o tráfego dos clientes para a rede core.<br>BGP (Border Gateway Protocol): É o protocolo de roteamento utilizado na internet para trocar informações entre Sistemas Autônomos (AS). No seu BNG/roteador de borda, o BGP é responsável por:</p>
+<p>Conectividade Global: Trocar rotas com provedores de trânsito ou peers (ex: MASTER SA, BR), garantindo que os clientes possam acessar qualquer destino na internet.<br>&nbsp;</p>
+<p style="text-align: center;"><strong>Visão Geral do Monitoramento no Grafana</strong><br>&nbsp;</p>
+<p>O painel BNG/BGP (equipamento LAV-HED-NEV-01) fornece informações completas, desde a saúde do hardware até o fluxo de dados e a conectividade com a internet.</p>
+<p>&nbsp;</p>
+<p><em><strong>1. 🥇 Saúde e Desempenho do Sistema</strong></em><br>&nbsp;</p>
+<p>Esta seção confirma que o equipamento de borda está operando de forma otimizada:</p>
+<p>Conectividade (Disponibilidade, Ping, Perda de Pacotes): Confirma a acessibilidade e a qualidade da comunicação com o BNG.<br>CPU e Memória: Monitora os recursos internos. Note que, no exemplo, a Memória está em 0.0% no gráfico, o que geralmente indica um problema de coleta de dados (dado ausente/errado) e deve ser investigado, apesar da CPU a 31.0% estar em nível aceitável.<br>PSU e FAN: Confirma o bom funcionamento da redundância de energia e refrigeração.<br>&nbsp;</p>
+<p><em><strong>2. 👥 Gerenciamento de Clientes (PPPoE e Pools de IPs)</strong></em><br>&nbsp;</p>
+<p>Métricas cruciais para a capacidade e qualidade do serviço de banda larga:</p>
+<p>Conexões PPPoE Ativas: Mostra o volume de clientes conectados no BNG em tempo real (Ex: subindo de 6290 para 6320).<br>Conexões por VLAN (OLT): Gráfico de pizza que distribui os clientes ativos por interface/VLAN, indicando a origem do tráfego.<br>Utilização do Pool de IPs: Alerta Crítico! O painel mostra que a Utilização do Pool de IPs está em 100% em todos os pools. Isso significa que o BNG não tem mais endereços para alocar a novos clientes ou clientes que tentam reconectar. Esta situação requer ação imediata para expandir os pools.<br>&nbsp;</p>
+<p><em><strong>3. 📉 Tráfego Agregado e Qualidade da Rede</strong></em><br>&nbsp;</p>
+<p>O BNG gerencia o maior volume de dados da rede, tornando o monitoramento do tráfego essencial:</p>
+<p>Tráfego de Entrada/Saída: Exibe o volume total de dados nas interfaces de agregacão/uplink.&nbsp;</p>
+<p><br></p>
+<p><em><strong>4. 🤝 Conectividade de Borda (Sessões BGP)</strong></em><br>&nbsp;</p>
+<p>Verifica a conectividade do BNG com a internet global:</p>
+<p>Sessões BGP Ativas: Indica se a conexão com os peers de roteamento está ativa. No exemplo, o BNG tem duas sessões ativas com o MASTER SA, BR.<br>Prefixos Aprendidos: Confirma que o BNG está recebendo as rotas (Prefixos) do peer. A contagem de 1 prefixo por peer pode indicar que está recebendo apenas a rota padrão ou uma rota agregada, o que é um estado funcional.<br>Este painel é o mais importante para a Qualidade do Serviço (QoS), pois revela se o BNG está sobrecarregado ou se a falta de recursos (como IPs) está impedindo o acesso de novos clientes.</p><p class="clearfix"></p></div>
+            </div></div></div></div>
+</div></article>
+</div></main><div class="nav-buttons"> <a href="../html/monitoramento-grafana3.html" title="Anterior" class="nav-button nav-button-left"> <span>Anterior</span></a><a href="../html/bng.html" title="Seguinte" class="nav-button nav-button-right"> <span>Seguinte</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class="cc cc-by-sa"> <p> <span class="license-label">Licencia: </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">creative commons: attribution - share alike 4.0</a></p>
+</div>
+</div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>exelearning.net <span>(nova janela)</span></span></a></p>
+</body>
+</html>
